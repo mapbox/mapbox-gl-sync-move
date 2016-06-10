@@ -22,4 +22,4 @@ There are unit tests with mocked maps, and there's a page for manual testing.
 
 Run the unit tests with `npm test`.
 
-Start a server to perform manual tests with `npm run start`.
+To manually test, ensure you have a `MapboxAccessToken` environment variable set. Then start the server with `npm run start`.

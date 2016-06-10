@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tape test/mocked-maps.js",
-    "start": "budo test/manual.js --live"
+    "start": "budo test/manual.js --live --open -- -t envify"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/mapbox/mapbox-gl-sync-move#readme",
   "devDependencies": {
     "budo": "^8.3.0",
+    "envify": "^3.4.0",
     "eventemitter3": "^1.2.0",
     "mapbox-gl": "^0.19.1",
     "sinon": "^1.17.4",

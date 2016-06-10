@@ -7,7 +7,7 @@ css.rel = 'stylesheet';
 css.href = 'https://api.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css'
 document.head.appendChild(css);
 
-mapboxgl.accessToken = window.localStorage.getItem('MapboxAccessToken');
+mapboxgl.accessToken = process.env.MapboxAccessToken;
 
 var instructions = createContainer({ mapStyle: false });
 instructions.innerHTML = (

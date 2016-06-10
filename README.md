@@ -18,7 +18,7 @@ syncMove(mapA, mapB);
 
 ## Developing
 
-There are unit tests with mocked maps, and a way to manually test.
+There are unit tests with mocked maps, and there's a page for manual testing.
 
 Run the unit tests with `npm test`.
 

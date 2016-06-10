@@ -4,7 +4,7 @@
   "description": "Sync movement around two Mapbox GL JS maps",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js",
+    "test": "tape test/mocked-maps.js",
     "start": "budo test/manual.js --live"
   },
   "repository": {

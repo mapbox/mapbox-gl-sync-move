@@ -1,4 +1,4 @@
-# mapbox-gl-sync-move
+# mapbox-gl-sync-move [![CircleCI](https://circleci.com/gh/mapbox/mapbox-gl-sync-move.svg?style=svg)](https://circleci.com/gh/mapbox/mapbox-gl-sync-move)
 
 Sync movement between two [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js) maps.
 

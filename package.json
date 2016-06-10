@@ -1,0 +1,30 @@
+{
+  "name": "mapbox-gl-sync-move",
+  "version": "0.1.0",
+  "description": "Sync movement around two Mapbox GL JS maps",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "start": "budo test/manual.js --live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/mapbox-gl-sync-move.git"
+  },
+  "keywords": [
+    "mapbox",
+    "mapboxgl"
+  ],
+  "author": "Mapbox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapbox/mapbox-gl-sync-move/issues"
+  },
+  "homepage": "https://github.com/mapbox/mapbox-gl-sync-move#readme",
+  "devDependencies": {
+    "budo": "^8.3.0",
+    "eventemitter3": "^1.2.0",
+    "sinon": "^1.17.4",
+    "tape": "^4.5.1"
+  }
+}

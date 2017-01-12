@@ -106,3 +106,123 @@ test('when bar moves thrice, foo moves thrice', function(t) {
 
   t.end();
 });
+
+test('when foo moves once, bar moves once, baz moves once', function(t) {
+  const foo = createMockMap();
+  const bar = createMockMap();
+  const baz = createMockMap();
+  syncMaps(foo, bar, baz);
+
+  foo.emit('move');
+
+  t.equal(foo.jumpTo.callCount, 0);
+  t.equal(foo.getCenter.callCount, 1);
+  t.equal(foo.getZoom.callCount, 1);
+  t.equal(foo.getBearing.callCount, 1);
+  t.equal(foo.getPitch.callCount, 1);
+
+  t.equal(bar.jumpTo.callCount, 1);
+  t.equal(bar.getCenter.callCount, 0);
+  t.equal(bar.getZoom.callCount, 0);
+  t.equal(bar.getBearing.callCount, 0);
+  t.equal(bar.getPitch.callCount, 0);
+
+  t.equal(baz.jumpTo.callCount, 1);
+  t.equal(baz.getCenter.callCount, 0);
+  t.equal(baz.getZoom.callCount, 0);
+  t.equal(baz.getBearing.callCount, 0);
+  t.equal(baz.getPitch.callCount, 0);
+
+  t.end();
+});
+
+test('when foo moves once, bar moves once, baz moves once -- array version', function(t) {
+  const foo = createMockMap();
+  const bar = createMockMap();
+  const baz = createMockMap();
+  syncMaps([foo, bar, baz]);
+
+  foo.emit('move');
+
+  t.equal(foo.jumpTo.callCount, 0);
+  t.equal(foo.getCenter.callCount, 1);
+  t.equal(foo.getZoom.callCount, 1);
+  t.equal(foo.getBearing.callCount, 1);
+  t.equal(foo.getPitch.callCount, 1);
+
+  t.equal(bar.jumpTo.callCount, 1);
+  t.equal(bar.getCenter.callCount, 0);
+  t.equal(bar.getZoom.callCount, 0);
+  t.equal(bar.getBearing.callCount, 0);
+  t.equal(bar.getPitch.callCount, 0);
+
+  t.equal(baz.jumpTo.callCount, 1);
+  t.equal(baz.getCenter.callCount, 0);
+  t.equal(baz.getZoom.callCount, 0);
+  t.equal(baz.getBearing.callCount, 0);
+  t.equal(baz.getPitch.callCount, 0);
+
+  t.end();
+});
+
+test('when foo moves thrice, bar moves thrice, baz moves thrice', function(t) {
+  const foo = createMockMap();
+  const bar = createMockMap();
+  const baz = createMockMap();
+  syncMaps(foo, bar, baz);
+
+  foo.emit('move');
+  foo.emit('move');
+  foo.emit('move');
+
+  t.equal(foo.jumpTo.callCount, 0);
+  t.equal(foo.getCenter.callCount, 3);
+  t.equal(foo.getZoom.callCount, 3);
+  t.equal(foo.getBearing.callCount, 3);
+  t.equal(foo.getPitch.callCount, 3);
+
+  t.equal(bar.jumpTo.callCount, 3);
+  t.equal(bar.getCenter.callCount, 0);
+  t.equal(bar.getZoom.callCount, 0);
+  t.equal(bar.getBearing.callCount, 0);
+  t.equal(bar.getPitch.callCount, 0);
+
+  t.equal(baz.jumpTo.callCount, 3);
+  t.equal(baz.getCenter.callCount, 0);
+  t.equal(baz.getZoom.callCount, 0);
+  t.equal(baz.getBearing.callCount, 0);
+  t.equal(baz.getPitch.callCount, 0);
+
+  t.end();
+});
+
+test('when foo moves thrice, bar moves thrice, baz moves thrice -- array version', function(t) {
+  const foo = createMockMap();
+  const bar = createMockMap();
+  const baz = createMockMap();
+  syncMaps([foo, bar, baz]);
+
+  foo.emit('move');
+  foo.emit('move');
+  foo.emit('move');
+
+  t.equal(foo.jumpTo.callCount, 0);
+  t.equal(foo.getCenter.callCount, 3);
+  t.equal(foo.getZoom.callCount, 3);
+  t.equal(foo.getBearing.callCount, 3);
+  t.equal(foo.getPitch.callCount, 3);
+
+  t.equal(bar.jumpTo.callCount, 3);
+  t.equal(bar.getCenter.callCount, 0);
+  t.equal(bar.getZoom.callCount, 0);
+  t.equal(bar.getBearing.callCount, 0);
+  t.equal(bar.getPitch.callCount, 0);
+
+  t.equal(baz.jumpTo.callCount, 3);
+  t.equal(baz.getCenter.callCount, 0);
+  t.equal(baz.getZoom.callCount, 0);
+  t.equal(baz.getBearing.callCount, 0);
+  t.equal(baz.getPitch.callCount, 0);
+
+  t.end();
+});

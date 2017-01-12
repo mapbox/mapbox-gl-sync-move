@@ -1,9 +1,16 @@
-function moveToMapPosition(referenceMap, mapToMove) {
-  mapToMove.jumpTo({
-    center: referenceMap.getCenter(),
-    zoom: referenceMap.getZoom(),
-    bearing: referenceMap.getBearing(),
-    pitch: referenceMap.getPitch()
+function moveToMapPosition (master, slaves) {
+  var center = master.getCenter();
+  var zoom = master.getZoom();
+  var bearing = master.getBearing();
+  var pitch = master.getPitch();
+
+  slaves.forEach(slave => {
+    slave.jumpTo({
+      center,
+      zoom,
+      bearing,
+      pitch
+    });
   });
 }
 
@@ -16,30 +23,46 @@ function moveToMapPosition(referenceMap, mapToMove) {
 // - could cause an infinite loop
 // - prematurely halts prolonged movements like
 //   double-click zooming, box-zooming, and flying
-function syncMaps(a, b) {
-  on();
-
-  function on() {
-    a.on('move', a2b);
-    b.on('move', b2a);
+function syncMaps () {
+  var maps;
+  var argLen = arguments.length;
+  if (argLen === 1) {
+    maps = arguments[0];
+  } else {
+    maps = Array(argLen);
+    for (i = 0; i < argLen; i++) {
+      maps[i] = arguments[i];
+    }
   }
-  function off() {
-    a.off('move', a2b);
-    b.off('move', b2a);
+
+  // Create all the movement functions, because if they're created every time
+  // they wouldn't be the same and couldn't be removed.
+  var fns = [];
+  maps.forEach((map, index) => {
+    fns[index] = sync.bind(null, map, maps.filter((o, i) => i !== index));
+  });
+
+  function on () {
+    maps.forEach((map, index) => {
+      map.on('move', fns[index]);
+    });
+  }
+
+  function off () {
+    maps.forEach((map, index) => {
+      map.off('move', fns[index]);
+    });
   }
 
   // When one map moves, we turn off the movement listeners
-  // on the both maps, move it, then turn the listeners on again
-  function a2b() {
+  // on all the maps, move it, then turn the listeners on again
+  function sync (master, slaves) {
     off();
-    moveToMapPosition(a, b);
+    moveToMapPosition(master, slaves);
     on();
   }
-  function b2a() {
-    off();
-    moveToMapPosition(b, a);
-    on();
-  }
+
+  on();
 }
 
 module.exports = syncMaps;

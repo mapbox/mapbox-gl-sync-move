@@ -33,8 +33,14 @@ var mapB = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/dark-v9'
 });
 
+var mapC = new mapboxgl.Map({
+  container: createContainer({ height: 400 }),
+  style: 'mapbox://styles/mapbox/basic-v9'
+});
+
 mapA.addControl(new mapboxgl.Navigation());
 mapB.addControl(new mapboxgl.Navigation());
+mapC.addControl(new mapboxgl.Navigation());
 
 document.getElementById('fly-tucson').addEventListener('click', function() {
   mapB.flyTo({
@@ -50,13 +56,13 @@ document.getElementById('fly-france').addEventListener('click', function() {
   });
 });
 
-mapboxGlSync(mapA, mapB);
+mapboxGlSync(mapA, mapB, mapC);
 
 function createContainer(options) {
   var container = document.createElement('div');
   if (!options || options.mapStyle !== false) {
     container.style.float = 'left';
-    container.style.width = '50%';
+    container.style.width = '33%';
     container.style.height = '400px';
 
   }

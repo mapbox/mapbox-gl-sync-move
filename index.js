@@ -1,11 +1,11 @@
-function moveToMapPosition (master, slaves) {
+function moveToMapPosition (master, clones) {
   var center = master.getCenter();
   var zoom = master.getZoom();
   var bearing = master.getBearing();
   var pitch = master.getPitch();
 
-  slaves.forEach(slave => {
-    slave.jumpTo({
+  clones.forEach(function (clone) {
+    clone.jumpTo({
       center,
       zoom,
       bearing,
@@ -30,7 +30,7 @@ function syncMaps () {
     maps = arguments[0];
   } else {
     maps = Array(argLen);
-    for (i = 0; i < argLen; i++) {
+    for (var i = 0; i < argLen; i++) {
       maps[i] = arguments[i];
     }
   }

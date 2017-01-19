@@ -6,10 +6,10 @@ function moveToMapPosition (master, clones) {
 
   clones.forEach(function (clone) {
     clone.jumpTo({
-      center,
-      zoom,
-      bearing,
-      pitch
+      center: center,
+      zoom: zoom,
+      bearing: bearing,
+      pitch: pitch
     });
   });
 }
@@ -38,18 +38,18 @@ function syncMaps () {
   // Create all the movement functions, because if they're created every time
   // they wouldn't be the same and couldn't be removed.
   var fns = [];
-  maps.forEach((map, index) => {
-    fns[index] = sync.bind(null, map, maps.filter((o, i) => i !== index));
+  maps.forEach(function (map, index) {
+    fns[index] = sync.bind(null, map, maps.filter(function (o, i) { return i !== index; }));
   });
 
   function on () {
-    maps.forEach((map, index) => {
+    maps.forEach(function (map, index) {
       map.on('move', fns[index]);
     });
   }
 
   function off () {
-    maps.forEach((map, index) => {
+    maps.forEach(function (map, index) {
       map.off('move', fns[index]);
     });
   }

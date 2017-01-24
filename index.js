@@ -56,9 +56,9 @@ function syncMaps () {
 
   // When one map moves, we turn off the movement listeners
   // on all the maps, move it, then turn the listeners on again
-  function sync (master, slaves) {
+  function sync (master, clones) {
     off();
-    moveToMapPosition(master, slaves);
+    moveToMapPosition(master, clones);
     on();
   }
 

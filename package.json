@@ -1,5 +1,5 @@
 {
-  "name": "mapbox-gl-sync-move",
+  "name": "@mapbox/mapbox-gl-sync-move",
   "version": "0.2.0",
   "description": "Sync movement around two Mapbox GL JS maps",
   "main": "index.js",

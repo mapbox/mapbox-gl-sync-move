@@ -29,9 +29,9 @@ function syncMaps () {
   if (argLen === 1) {
     maps = arguments[0];
   } else {
-    maps = Array(argLen);
+    maps = [];
     for (var i = 0; i < argLen; i++) {
-      maps[i] = arguments[i];
+      maps.push(arguments[i]);
     }
   }
 

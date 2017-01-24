@@ -1,6 +1,12 @@
-# mapbox-gl-sync-move [![CircleCI](https://circleci.com/gh/mapbox/mapbox-gl-sync-move.svg?style=svg)](https://circleci.com/gh/mapbox/mapbox-gl-sync-move)
+# @mapbox/mapbox-gl-sync-move [![CircleCI](https://circleci.com/gh/mapbox/mapbox-gl-sync-move.svg?style=svg)](https://circleci.com/gh/mapbox/mapbox-gl-sync-move)
 
 Sync movement between two or more [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js) maps.
+
+## Install
+
+```
+npm install @mapbox/mapbox-gl-sync-move
+```
 
 ## Usage
 

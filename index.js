@@ -63,6 +63,7 @@ function syncMaps () {
   }
 
   on();
+  return function(){  off(); fns = []; };
 }
 
 module.exports = syncMaps;

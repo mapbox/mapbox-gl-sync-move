@@ -28,5 +28,8 @@
     "mapbox-gl": "^0.19.1",
     "sinon": "^1.17.4",
     "tape": "^4.5.1"
+  },
+  "peerDependencies": {
+    "mapbox-gl": ">=0.32.1 <2.0.0"
   }
 }

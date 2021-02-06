@@ -14,12 +14,12 @@ This module exports a function that receives as arguments two or more [Mapbox GL
 
 ```js
 var mapboxgl = require('mapbox-gl');
-var syncMove = require('mapbox-gl-sync-move');
+var syncMaps = require('mapbox-gl-sync-move');
 
 var mapA = new mapboxgl.Map(..);
 var mapB = new mapboxgl.Map(..);
 
-syncMove(mapA, mapB);
+syncMaps(mapA, mapB);
 ```
 
 ## Developing

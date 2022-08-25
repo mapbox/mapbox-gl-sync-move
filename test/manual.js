@@ -4,7 +4,7 @@ var mapboxGlSync = require('..');
 // Add the CSS
 var css = document.createElement('link');
 css.rel = 'stylesheet';
-css.href = 'https://api.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css'
+css.href = 'https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css'
 document.head.appendChild(css);
 
 mapboxgl.accessToken = process.env.MapboxAccessToken;
@@ -38,9 +38,9 @@ var mapC = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/basic-v9'
 });
 
-mapA.addControl(new mapboxgl.Navigation());
-mapB.addControl(new mapboxgl.Navigation());
-mapC.addControl(new mapboxgl.Navigation());
+mapA.addControl(new mapboxgl.NavigationControl());
+mapB.addControl(new mapboxgl.NavigationControl());
+mapC.addControl(new mapboxgl.NavigationControl());
 
 document.getElementById('fly-tucson').addEventListener('click', function() {
   mapB.flyTo({

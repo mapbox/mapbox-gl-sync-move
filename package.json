@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mapbox-gl-sync-move",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Sync movement around two Mapbox GL JS maps",
   "main": "index.js",
   "scripts": {
@@ -28,5 +28,8 @@
     "mapbox-gl": "^2.10.0",
     "sinon": "^14.0.0",
     "tape": "^5.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

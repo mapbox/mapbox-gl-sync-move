@@ -1,5 +1,7 @@
 # Changelog
 
+Starting after 0.3.1, release notes are published as [GitHub Releases](https://github.com/mapbox/mapbox-gl-sync-move/releases).
+
 ## 0.3.0
 
 - Add `off` method for cancelling synchronization

@@ -3,6 +3,9 @@
   "version": "0.3.1",
   "description": "Sync movement around two Mapbox GL JS maps",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "tape test/mocked-maps.js",
     "start": "budo test/manual.js --live --open -- -t envify"
@@ -28,5 +31,8 @@
     "mapbox-gl": "^2.10.0",
     "sinon": "^14.0.0",
     "tape": "^5.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
